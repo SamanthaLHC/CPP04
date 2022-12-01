@@ -15,7 +15,7 @@ class Animal
 		Animal &operator=( Animal const &rhs);
 		~Animal(void);
 
-		void makeSound();
+		virtual void makeSound(Animal const& any_pet);
 
 	protected:
 
