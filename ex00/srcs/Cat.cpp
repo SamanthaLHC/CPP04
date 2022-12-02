@@ -18,7 +18,7 @@ Cat::Cat(std::string type): Animal()
 			  << RES << std::endl;
 }
 
-Cat::Cat(const Cat &cpy)
+Cat::Cat(const Cat &cpy): Animal()
 {
 	std::cout << BWHT << this->_type << " Cat copy constructor called."
 			  << RES << std::endl;

@@ -17,7 +17,7 @@ Dog::Dog(std::string type): Animal()
 			  << RES << std::endl;
 }
 
-Dog::Dog(const Dog &cpy)
+Dog::Dog(const Dog &cpy) : Animal()
 {
 	std::cout << BWHT << this->_type << " Dog copy constructor called."
 			  << RES << std::endl;

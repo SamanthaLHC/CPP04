@@ -15,7 +15,7 @@ class Dog : public Animal
 		Dog &operator=(Dog const &rhs);
 		~Dog();
 
-		void makeSound();
+		void makeSound() const;
 
 	private:
 

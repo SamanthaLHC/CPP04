@@ -13,6 +13,8 @@ SRCS = $(addprefix $(SRCS_PATH), \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		wrongAnimal.cpp \
+		wrongCat.cpp \
 		main.cpp)
 
 OBJS	= $(SRCS:$(SRCS_PATH)%.cpp=$(OBJ_PATH)%.o)

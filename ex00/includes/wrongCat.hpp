@@ -1,21 +1,21 @@
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "wrongAnimal.hpp"
 #include <iostream>
 #include <string>
 
-class Cat : public Animal
+class wrongCat : public wrongAnimal
 {
 	public:
 
-		Cat(void);
-		Cat(std::string name);
-		Cat(Cat const &cpy);
-		Cat &operator=(Cat const &rhs);
-		~Cat();
+		wrongCat(void);
+		wrongCat(std::string name);
+		wrongCat(wrongCat const &cpy);
+		wrongCat &operator=(wrongCat const &rhs);
+		~wrongCat();
 
-		void makeSound();
+		void makeSound() const;
 
 	private:
 
