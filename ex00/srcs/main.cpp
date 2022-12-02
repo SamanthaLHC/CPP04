@@ -5,14 +5,13 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-...
+const Animal* pet = new Animal();
+const Animal* doggo = new Dog();
+const Animal* matou = new Cat();
+std::cout << doggo->getType() << " " << std::endl;
+std::cout << matou->getType() << " " << std::endl;
+matou->makeSound(); //will output the cat sound!
+doggo->makeSound();
+pet->makeSound();
 return 0;
 }

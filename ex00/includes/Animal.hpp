@@ -13,13 +13,16 @@ class Animal
 		Animal(std::string name);
 		Animal(Animal const &cpy);
 		Animal &operator=( Animal const &rhs);
-		~Animal(void);
+		virtual ~Animal(void);
 
-		virtual void makeSound(Animal const& any_pet);
+		virtual void makeSound();
+
+		std::string getType();
+
 
 	protected:
 
-		std::string type;
+		std::string _type;
 
 };
 
