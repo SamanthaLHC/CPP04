@@ -1,38 +1,38 @@
 
-#include "Animal.hpp"
+#include "wrongAnimal.hpp"
 #include "colors.h"
 
 // constructs and destruct =====================================================
 //=============================================================================
 
-Animal::Animal()
+wrongAnimal::wrongAnimal()
 {
-	std::cout << BWHT << " Animal default constructor called."
+	std::cout << BWHT << " wrongAnimal default constructor called."
 			  << RES << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
+wrongAnimal::wrongAnimal(std::string type): _type(type)
 {
-	std::cout << BWHT << " Animal type constructor called."
+	std::cout << BWHT << " wrongAnimal type constructor called."
 			  << RES << std::endl;
 }
 
-Animal::Animal(const Animal &cpy)
+wrongAnimal::wrongAnimal(const wrongAnimal &cpy)
 {
-	std::cout << BWHT << " Animal copy constructor called."
+	std::cout << BWHT << " wrongAnimal copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
 
-Animal::~Animal()
+wrongAnimal::~wrongAnimal()
 {
-	std::cout << BWHT << " Animal destructor called." << RES << std::endl;
+	std::cout << "\e[0;31mDestructor called of wrongAnimal\e[0m" << std::endl;
 }
 
 // operator overload ==========================================================
 //=============================================================================
 
-Animal &Animal::operator=(const Animal &rhs)
+wrongAnimal &wrongAnimal::operator=(const wrongAnimal &rhs)
 {
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -42,7 +42,7 @@ Animal &Animal::operator=(const Animal &rhs)
 // accessors ==================================================================
 //=============================================================================
 
-std::string Animal::getType() const
+std::string wrongAnimal::getType() const
 {
 	return this->_type;
 }
@@ -50,8 +50,8 @@ std::string Animal::getType() const
 // members functions ==========================================================
 //=============================================================================
 
-void Animal::makeSound() const
+void wrongAnimal::makeSound() const
 {
-	std::cout << BWHT << this->_type << " *strange animal noise*"
+	std::cout << BWHT << this->_type << " *strange Animal noise*"
 			  << RES << std::endl;
 }

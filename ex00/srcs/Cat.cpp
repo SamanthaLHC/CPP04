@@ -7,6 +7,7 @@
 
 Cat::Cat()
 {
+	this->_type = "Cat";
 	std::cout << BWHT << " Cat default constructor called."
 			  << RES << std::endl;
 }
@@ -27,7 +28,7 @@ Cat::Cat(const Cat &cpy): Animal()
 
 Cat::~Cat()
 {
-	std::cout << "\e[0;31mDestructor called of Cat\e[0m" << std::endl;
+	std::cout << BWHT << " Cat destructor called." << RES << std::endl;
 }
 
 // operator overload ==========================================================
@@ -35,7 +36,8 @@ Cat::~Cat()
 
 Cat &Cat::operator=(const Cat &rhs)
 {
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return *this;
 }
 

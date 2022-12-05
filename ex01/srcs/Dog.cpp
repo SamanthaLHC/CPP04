@@ -6,23 +6,21 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-Dog::Dog()
+Dog::Dog() : Animal("Dog"), _doggo_brain(NULL)
 {
 	std::cout << BWHT << " Dog default constructor called."
 			  << RES << std::endl;
-	this->_type = "Dog";
 	this->_doggo_brain = new Brain();
 }
 
-Dog::Dog(std::string type) : Animal()
+Dog::Dog(std::string type) : Animal(type), _doggo_brain(NULL)
 {
-	this->_type = type;
 	std::cout << BWHT << " Dog type constructor called."
 			  << RES << std::endl;
 	this->_doggo_brain = new Brain();
 }
 
-Dog::Dog(const Dog &cpy) : Animal()
+Dog::Dog(const Dog &cpy) : Animal(cpy), _doggo_brain(NULL)
 {
 	std::cout << BWHT << this->_type << " Dog copy constructor called."
 			  << RES << std::endl;

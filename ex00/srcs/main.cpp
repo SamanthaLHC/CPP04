@@ -2,8 +2,8 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "wrongAnimal.hpp"
-#include "wrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "colors.h"
 
 int main()
@@ -21,16 +21,21 @@ int main()
 		doggo->makeSound();
 		std::cout << BMAG << "waiting for animal sound : " << RES << std::endl;
 		pet->makeSound();
+		delete pet;
+		delete doggo;
+		delete matou;
 	}
 	{
 		std::cout << std::endl;
 		std::cout << BCYN << " scenario without virtual:" << RES << std::endl;
-		const wrongAnimal *pet = new wrongAnimal();
-		const wrongAnimal *matou = new wrongCat();
+		const WrongAnimal *pet = new WrongAnimal();
+		const WrongAnimal *matou = new WrongCat();
 		std::cout << matou->getType() << " " << std::endl;
 		std::cout << BMAG << "wrong cat sound : " << RES << std::endl;
 		matou->makeSound(); 
 		std::cout << BMAG << "waiting for animal sound : " << RES << std::endl;
 		pet->makeSound();
+		delete pet;
+		delete matou;
 	}
 }

@@ -1,28 +1,23 @@
 
 #include "Cat.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include "colors.h"
 
 // constructs and destruct =====================================================
 //=============================================================================
 
-Cat::Cat() : Animal("Cat"), _brain_cat(NULL) 
+Cat::Cat()
 {
 	std::cout << BWHT << " Cat default constructor called."
 			  << RES << std::endl;
+	this->_type = "Cat";
 	this->_brain_cat = new Brain();
 }
 
-Cat::Cat(std::string type) : Animal(type), _brain_cat(NULL)
+Cat::Cat(const Cat &cpy) : AAnimal(cpy), _brain_cat(NULL)
 {
-	std::cout << BWHT << " Cat type constructor called."
-			  << RES << std::endl;
-	this->_brain_cat = new Brain();
-}
-
-Cat::Cat(const Cat &cpy) : Animal(cpy), _brain_cat(NULL)
-{
-	std::cout << BWHT << this->_type << " Cat copy constructor called."
+	std::cout << BWHT << " " << this->_type << " copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
@@ -55,7 +50,7 @@ Cat &Cat::operator=(const Cat &rhs)
 // members functions and accessors =============================================
 //==============================================================================
 
-void Cat::makeSound() const
+void Cat::makeSound()
 {
 	std::cout << BWHT << this->_type << " Mrrrraouuuw"
 			  << RES << std::endl;

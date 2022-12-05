@@ -1,5 +1,6 @@
 
-#include "wrongCat.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 #include "colors.h"
 #include <iostream>
 #include <string>
@@ -7,44 +8,45 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-wrongCat::wrongCat()
+WrongCat::WrongCat()
 {
-	std::cout << BWHT << " wrongCat default constructor called."
+	std::cout << BWHT << " WrongCat default constructor called."
 			  << RES << std::endl;
 }
 
-wrongCat::wrongCat(std::string type): wrongAnimal()
+WrongCat::WrongCat(std::string type): WrongAnimal()
 {
 	this->_type = type;
-	std::cout << BWHT << " wrongCat type constructor called."
+	std::cout << BWHT << " WrongCat type constructor called."
 			  << RES << std::endl;
 }
 
-wrongCat::wrongCat(const wrongCat &cpy): wrongAnimal()
+WrongCat::WrongCat(const WrongCat &cpy): WrongAnimal()
 {
-	std::cout << BWHT << this->_type << " wrongCat copy constructor called."
+	std::cout << BWHT << this->_type << " WrongCat copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
 
-wrongCat::~wrongCat()
+WrongCat::~WrongCat()
 {
-	std::cout << "\e[0;31mDestructor called of wrongCat\e[0m" << std::endl;
+	std::cout << BWHT << " WrongCat destructor called." << RES << std::endl;
 }
 
 // operator overload ==========================================================
 //=============================================================================
 
-wrongCat &wrongCat::operator=(const wrongCat &rhs)
+WrongCat &WrongCat::operator=(const WrongCat &rhs)
 {
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return *this;
 }
 
 // members functions ==========================================================
 //=============================================================================
 
-void wrongCat::makeSound() const
+void WrongCat::makeSound() const
 {
 	std::cout << BWHT << this->_type << " Mrrrraouuuw"
 			  << RES << std::endl;
