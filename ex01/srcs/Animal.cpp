@@ -26,7 +26,7 @@ Animal::Animal(const Animal &cpy)
 
 Animal::~Animal()
 {
-	std::cout << "\e[0;31mDestructor called of Animal\e[0m" << std::endl;
+	std::cout << BWHT << " Animal Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================

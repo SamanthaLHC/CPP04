@@ -1,5 +1,6 @@
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 #include "colors.h"
 
 // constructs and destruct =====================================================
@@ -30,7 +31,7 @@ Cat::Cat(const Cat &cpy) : Animal()
 
 Cat::~Cat()
 {
-	std::cout << "\e[0;31mDestructor called of Cat\e[0m" << std::endl;
+	std::cout << BWHT << " Cat Destructor called" << RES << std::endl;
 	delete this->_brain_cat;
 }
 
@@ -40,7 +41,15 @@ Cat::~Cat()
 Cat &Cat::operator=(const Cat &rhs)
 {
 	if (this != &rhs)
+	{
 		this->_type = rhs._type;
+		if (this->_brain_cat)
+			delete this->_brain_cat;
+		if (rhs._brain_cat)
+			delete rhs._brain_cat;
+		this->_brain_cat = new Brain();
+		*(this->_brain_cat) = *(rhs._brain_cat);
+	}
 	return *this;
 }
 
