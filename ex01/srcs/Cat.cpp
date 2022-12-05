@@ -44,11 +44,14 @@ Cat &Cat::operator=(const Cat &rhs)
 	{
 		this->_type = rhs._type;
 		if (this->_brain_cat)
+		{
 			delete this->_brain_cat;
+			this->_brain_cat = NULL;
+		}
 		if (rhs._brain_cat)
-			delete rhs._brain_cat;
-		this->_brain_cat = new Brain();
-		*(this->_brain_cat) = *(rhs._brain_cat);
+		{
+			this->_brain_cat = new Brain(*rhs._brain_cat);
+		}
 	}
 	return *this;
 }
