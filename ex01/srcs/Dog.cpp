@@ -49,9 +49,7 @@ Dog &Dog::operator=(const Dog &rhs)
 			this->_doggo_brain = NULL;
 		}
 		if (rhs._doggo_brain)
-		{
 			this->_doggo_brain = new Brain(*rhs._doggo_brain);
-		}
 	}
 	return *this;
 }

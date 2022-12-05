@@ -6,20 +6,20 @@
 
 Brain::Brain()
 {
-	std::cout << BWHT << " Brain default constructor called."
+	std::cout << BMAG << " Brain default constructor called."
 			  << RES << std::endl;
 }
 
 Brain::Brain(const Brain &cpy)
 {
-	std::cout << BWHT << " Brain copy constructor called."
+	std::cout << BMAG << " Brain copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
 
 Brain::~Brain()
 {
-	std::cout << BWHT << " Brain Destructor called" << RES << std::endl;
+	std::cout << BMAG << " Brain Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================
@@ -28,7 +28,7 @@ Brain::~Brain()
 Brain &Brain::operator=(const Brain &rhs)
 {
 	if (this != &rhs)
-		std::cout << BWHT << " Brain operator overload func called."
+		std::cout << BMAG << " Brain operator overload func called."
 				  << RES << std::endl;
 	return *this;
 }

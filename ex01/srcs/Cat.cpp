@@ -49,9 +49,7 @@ Cat &Cat::operator=(const Cat &rhs)
 			this->_brain_cat = NULL;
 		}
 		if (rhs._brain_cat)
-		{
 			this->_brain_cat = new Brain(*rhs._brain_cat);
-		}
 	}
 	return *this;
 }
