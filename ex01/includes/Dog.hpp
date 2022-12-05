@@ -2,6 +2,7 @@
 #define Dog_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 #include <string>
 
@@ -18,7 +19,8 @@ class Dog : public Animal
 		void makeSound() const;
 
 	private:
-
+		
+		Brain* _doggo_brain;
 };
 
 #endif

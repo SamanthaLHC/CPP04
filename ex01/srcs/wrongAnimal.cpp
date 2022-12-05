@@ -34,7 +34,8 @@ wrongAnimal::~wrongAnimal()
 
 wrongAnimal &wrongAnimal::operator=(const wrongAnimal &rhs)
 {
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return *this;
 }
 

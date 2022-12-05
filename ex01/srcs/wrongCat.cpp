@@ -37,7 +37,8 @@ wrongCat::~wrongCat()
 
 wrongCat &wrongCat::operator=(const wrongCat &rhs)
 {
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return *this;
 }
 
