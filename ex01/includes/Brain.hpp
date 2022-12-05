@@ -13,15 +13,14 @@ class Brain
 		Brain(Brain const &cpy);
 		Brain &operator=(Brain const &rhs);
 		~Brain();
-
-		std::string getIdeas();
-		std::string setIdeas();
+	
+		void print_ideas(void);
+		std::string* get_ideas(void);
+		void set_ideas(std::string idea);
 
 	private:
 
-	std::string _ideas[100];
-
-
+		std::string _ideas[100];
 };
 
 #endif

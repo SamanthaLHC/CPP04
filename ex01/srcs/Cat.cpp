@@ -54,11 +54,16 @@ Cat &Cat::operator=(const Cat &rhs)
 	return *this;
 }
 
-// members functions ==========================================================
-//=============================================================================
+// members functions and accessors =============================================
+//==============================================================================
 
 void Cat::makeSound() const
 {
 	std::cout << BWHT << this->_type << " Mrrrraouuuw"
 			  << RES << std::endl;
+}
+
+Brain* Cat::get_brain() const
+{
+	return this->_brain_cat;
 }

@@ -2,7 +2,7 @@
 #include "colors.h"
 
 // constructs and destruct =====================================================
-//=============================================================================
+//==============================================================================
 
 Brain::Brain()
 {
@@ -31,4 +31,33 @@ Brain &Brain::operator=(const Brain &rhs)
 		std::cout << BMAG << " Brain operator overload func called."
 				  << RES << std::endl;
 	return *this;
+}
+
+// accessors ==================================================================
+//=============================================================================
+
+std::string* Brain::get_ideas(void)
+{
+	return this->_ideas; 
+}
+
+void Brain::set_ideas(std::string idea)
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->_ideas[i] == "")
+		{
+			this->_ideas[i] = idea;
+			break;
+		}
+	}
+}
+
+void Brain::print_ideas()
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->_ideas[i] != "")
+			std::cout << BYEL << this->_ideas[i] << RES << std::endl;
+	}
 }

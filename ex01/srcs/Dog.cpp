@@ -54,11 +54,16 @@ Dog &Dog::operator=(const Dog &rhs)
 	return *this;
 }
 
-// members functions ==========================================================
+// members functions and accessors ============================================
 //=============================================================================
 
 void Dog::makeSound() const
 {
 	std::cout << BWHT << this->_type << " wouf wouf! "
 			  << RES << std::endl;
+}
+
+Brain* Dog::get_brain() const
+{
+	return this->_doggo_brain;
 }

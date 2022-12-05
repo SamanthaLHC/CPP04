@@ -19,11 +19,9 @@ int main()
 	{
 		std::cout << BRED << "______VERIFS DEEP COPY CATS AND DOGS_______" << RES << std::endl;
 		Dog samoyede;
-		Dog bouvier;
-		bouvier = samoyede;
+		Dog bouvier = samoyede;
 		Cat zeph;
-		Cat koko;
-		koko = zeph;
+		Cat koko = zeph;
 	}
 	{
 		std::cout << BRED << "______CREATE ANIMAL ARRAY_______" << RES << std::endl;
@@ -45,6 +43,16 @@ int main()
 		std::cout << BRED << "______PETS GOT IDEAS_______" << RES << std::endl;
 		Dog junior;
 		Cat zeph;
-		
+
+		std::cout << BYEL << "Junior think :" << RES << std::endl;
+		junior.get_brain()->set_ideas(" I will steal her slipper, hihihi!");
+		junior.get_brain()->set_ideas(" Maybe i should ask for rubrub on my shoulders..");
+		junior.get_brain()->set_ideas(" Oh ! Another slipper ! I can steal it ! huhuhu!");
+		junior.get_brain()->print_ideas();
+		std::cout << BYEL << "Zeph think :" << RES << std::endl;
+		zeph.get_brain()->set_ideas(" I could set a schedule for my visits in the neighborhood in order to have as much food as possible .. ");
+		zeph.get_brain()->set_ideas(" I'm wondering... What will happen if i push the glass out of the table ? ");
+		zeph.get_brain()->set_ideas(" It is time for me to see my servant.. I think he will give me my fav food. ");
+		zeph.get_brain()->print_ideas();
 	}
 }
