@@ -11,6 +11,12 @@ AAnimal::AAnimal()
 			  << RES << std::endl;
 }
 
+AAnimal::AAnimal(std::string type): _type(type)
+{
+	std::cout << BBLU << " AAnimal type constructor called."
+			  << RES << std::endl;
+}
+
 AAnimal::AAnimal(const AAnimal &cpy)
 {
 	std::cout << BBLU << " AAnimal copy constructor called."
@@ -39,4 +45,13 @@ AAnimal &AAnimal::operator=(const AAnimal &rhs)
 std::string AAnimal::getType() const
 {
 	return this->_type;
+}
+
+// members functions ==========================================================
+//=============================================================================
+
+void AAnimal::makeSound() const
+{
+	std::cout << BBLU << this->_type << " *strange animal noise*"
+			  << RES << std::endl;
 }

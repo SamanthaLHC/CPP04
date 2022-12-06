@@ -6,12 +6,20 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i < 100; i++)
+	{
+		this->_ideas[i] = "";
+	}
 	std::cout << BMAG << " Brain default constructor called."
 			  << RES << std::endl;
 }
 
 Brain::Brain(const Brain &cpy)
 {
+	for (int i = 0; i < 100; i++)
+	{
+		this->_ideas[i] = "";
+	}
 	std::cout << BMAG << " Brain copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
@@ -28,17 +36,26 @@ Brain::~Brain()
 Brain &Brain::operator=(const Brain &rhs)
 {
 	if (this != &rhs)
-		std::cout << BMAG << " Brain operator overload func called."
-				  << RES << std::endl;
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			this->_ideas[i] = rhs.get_ideas(i);
+		}
+	}
 	return *this;
 }
 
 // accessors ==================================================================
 //=============================================================================
 
-std::string* Brain::get_ideas(void)
+std::string Brain::get_ideas(int idx) const
 {
-	return this->_ideas; 
+	if (idx < 0 || idx > 100)
+	{
+		std::cout << BRED << "Index not in range." << RES << std::endl;
+		return this->_ideas[0];
+	}	
+	return this->_ideas[idx];
 }
 
 void Brain::set_ideas(std::string idea)
@@ -53,7 +70,7 @@ void Brain::set_ideas(std::string idea)
 	}
 }
 
-void Brain::print_ideas()
+void Brain::print_ideas() const
 {
 	for (int i = 0; i < 100; i++)
 	{

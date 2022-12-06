@@ -2,13 +2,14 @@
 #include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "wrongAnimal.hpp"
-#include "wrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "colors.h"
+#include <sstream>
 
 int main()
 {
-
+	// AAnimal pouet;
 	{
 		std::cout << BRED << "____________MAIN DU SUJET____________" << RES << std::endl;
 		const AAnimal *doggo = new Dog();
@@ -19,19 +20,18 @@ int main()
 	{
 		std::cout << BRED << "______VERIFS DEEP COPY CATS AND DOGS_______" << RES << std::endl;
 		Dog samoyede;
+		samoyede.get_brain()->set_ideas("I am a samoyede");
 		Dog bouvier = samoyede;
-		if (bouvier.get_brain() == samoyede.get_brain())
-		{
-			std::cerr << BRED << " Two dogs are sharing one brain !! Are they siamese ?" << RES << std::endl;
-			return 1;
-		}
+		std::cout << BMAG << "before change : " << RES << std::endl;
+		bouvier.get_brain()->print_ideas();
+		samoyede.get_brain()->print_ideas();
+		std::cout << BMAG << "after change : " << RES << std::endl;
+		bouvier.get_brain()->set_ideas("NO ! I am a bouvier!");
+		bouvier.get_brain()->print_ideas();
+		samoyede.get_brain()->print_ideas();
+
 		Cat zeph;
 		Cat koko = zeph;
-		if (zeph.get_brain() == koko.get_brain())
-		{
-			std::cerr << BRED << " Two cats are sharing one brain !! Are they siamese ?" << RES << std::endl;
-			return 1;
-		}
 	}
 	{
 		std::cout << BRED << "______CREATE ANIMAL ARRAY_______" << RES << std::endl;
@@ -39,13 +39,31 @@ int main()
 		AAnimal *lot_of_pets[n];
 		for (int i = 0; i < n; i++)
 		{
+
 			for (i = 0; i < n / 2; i++)
+			{
+				std::stringstream idea;
+				idea <<  "I am Dog number " << i;
 				lot_of_pets[i] = new Dog();
-			for (i = i; i < n; i++)
+				((Dog*) lot_of_pets[i])->get_brain()->set_ideas(idea.str());
+			}
+			while (i < n)
+			{
+				std::stringstream idea;
+				idea <<  "I am Cat number " << i;
 				lot_of_pets[i] = new Cat();
+				((Cat*) lot_of_pets[i])->get_brain()->set_ideas(idea.str());
+				i++;
+			}
 		}
 		for (int i = 0; i < n; i++)
+		{
 			lot_of_pets[i]->makeSound();
+			if (i < n / 2)
+				((Dog*) lot_of_pets[i])->get_brain()->print_ideas();
+			else
+				((Cat*) lot_of_pets[i])->get_brain()->print_ideas();
+		}
 		for (int i = 0; i < n; i++)
 			delete lot_of_pets[i];
 	}

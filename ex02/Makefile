@@ -10,11 +10,11 @@ SRCS_PATH = ./srcs/
 OBJ_PATH = ./objs/
 
 SRCS = $(addprefix $(SRCS_PATH), \
-		AAnimal.cpp \
+		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		wrongAnimal.cpp \
-		wrongCat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 		Brain.cpp \
 		main.cpp)
 

@@ -6,17 +6,15 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-Dog::Dog()
+Dog::Dog() : AAnimal("Dog"), _doggo_brain(NULL)
 {
 	std::cout << BWHT << " Dog default constructor called."
 			  << RES << std::endl;
-	this->_type = "Dog";
 	this->_doggo_brain = new Brain();
 }
 
-Dog::Dog(std::string type)
+Dog::Dog(std::string type) : AAnimal(type), _doggo_brain(NULL)
 {
-	this->_type = type;
 	std::cout << BWHT << " Dog type constructor called."
 			  << RES << std::endl;
 	this->_doggo_brain = new Brain();
@@ -24,15 +22,16 @@ Dog::Dog(std::string type)
 
 Dog::Dog(const Dog &cpy) : AAnimal(cpy), _doggo_brain(NULL)
 {
-	std::cout << BWHT << " " << this->_type << " copy constructor called."
+	std::cout << BWHT << " Dog copy constructor called."
 			  << RES << std::endl;
+	this->_doggo_brain = new Brain();
 	*this = cpy;
 }
 
 Dog::~Dog()
 {
-	std::cout << BWHT << " Dog Destructor called" << RES << std::endl;
 	delete this->_doggo_brain;
+	std::cout << BWHT << " Dog Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================
@@ -57,7 +56,7 @@ Dog &Dog::operator=(const Dog &rhs)
 // members functions and accessors ============================================
 //=============================================================================
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << BWHT << this->_type << " wouf wouf! "
 			  << RES << std::endl;

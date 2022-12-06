@@ -1,38 +1,38 @@
 
-#include "wrongAnimal.hpp"
+#include "WrongAnimal.hpp"
 #include "colors.h"
 
 // constructs and destruct =====================================================
 //=============================================================================
 
-wrongAnimal::wrongAnimal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << BWHT << " wrongAnimal default constructor called."
+	std::cout << BWHT << " WrongAnimal default constructor called."
 			  << RES << std::endl;
 }
 
-wrongAnimal::wrongAnimal(std::string type): _type(type)
+WrongAnimal::WrongAnimal(std::string type): _type(type)
 {
-	std::cout << BWHT << " wrongAnimal type constructor called."
+	std::cout << BWHT << " WrongAnimal type constructor called."
 			  << RES << std::endl;
 }
 
-wrongAnimal::wrongAnimal(const wrongAnimal &cpy)
+WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
 {
-	std::cout << BWHT << " wrongAnimal copy constructor called."
+	std::cout << BWHT << " WrongAnimal copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
 
-wrongAnimal::~wrongAnimal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "\e[0;31mDestructor called of wrongAnimal\e[0m" << std::endl;
+	std::cout << "\e[0;31mDestructor called of WrongAnimal\e[0m" << std::endl;
 }
 
 // operator overload ==========================================================
 //=============================================================================
 
-wrongAnimal &wrongAnimal::operator=(const wrongAnimal &rhs)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -42,7 +42,7 @@ wrongAnimal &wrongAnimal::operator=(const wrongAnimal &rhs)
 // accessors ==================================================================
 //=============================================================================
 
-std::string wrongAnimal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return this->_type;
 }
@@ -50,7 +50,7 @@ std::string wrongAnimal::getType() const
 // members functions ==========================================================
 //=============================================================================
 
-void wrongAnimal::makeSound() const
+void WrongAnimal::makeSound() const
 {
 	std::cout << BWHT << this->_type << " *strange Animal noise*"
 			  << RES << std::endl;

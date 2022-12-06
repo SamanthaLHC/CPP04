@@ -11,11 +11,12 @@ class Cat : public AAnimal
 	public:
 
 		Cat(void);
+		Cat(std::string name);
 		Cat(Cat const &cpy);
 		Cat &operator=(Cat const &rhs);
 		~Cat();
 
-		void makeSound();
+		void makeSound() const;
 		Brain* get_brain() const;
 
 	private:

@@ -1,7 +1,6 @@
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#include "AAnimal.hpp"
 #include <iostream>
 #include <string>
 
@@ -14,8 +13,8 @@ class Brain
 		Brain &operator=(Brain const &rhs);
 		~Brain();
 	
-		void print_ideas(void);
-		std::string* get_ideas(void);
+		void print_ideas(void) const;
+		std::string get_ideas(int idx) const;
 		void set_ideas(std::string idea);
 
 	private:

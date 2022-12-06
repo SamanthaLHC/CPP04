@@ -5,15 +5,15 @@
 #include <iostream>
 #include <string>
 
-class wrongAnimal
+class WrongAnimal
 {
 	public:
 
-		wrongAnimal(void);
-		wrongAnimal(std::string name);
-		wrongAnimal(wrongAnimal const &cpy);
-		wrongAnimal &operator=( wrongAnimal const &rhs);
-		~wrongAnimal(void);
+		WrongAnimal(void);
+		WrongAnimal (std::string type);
+		WrongAnimal(WrongAnimal const &cpy);
+		WrongAnimal &operator=( WrongAnimal const &rhs);
+		~WrongAnimal(void);
 
 		void makeSound() const;
 

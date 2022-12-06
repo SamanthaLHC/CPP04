@@ -1,31 +1,37 @@
 
 #include "Cat.hpp"
-#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include "colors.h"
 
 // constructs and destruct =====================================================
 //=============================================================================
 
-Cat::Cat()
+Cat::Cat() : AAnimal("Cat"), _brain_cat(NULL)
 {
 	std::cout << BWHT << " Cat default constructor called."
 			  << RES << std::endl;
-	this->_type = "Cat";
+	this->_brain_cat = new Brain();
+}
+
+Cat::Cat(std::string type) : AAnimal(type), _brain_cat(NULL)
+{
+	std::cout << BWHT << " Cat type constructor called."
+			  << RES << std::endl;
 	this->_brain_cat = new Brain();
 }
 
 Cat::Cat(const Cat &cpy) : AAnimal(cpy), _brain_cat(NULL)
 {
-	std::cout << BWHT << " " << this->_type << " copy constructor called."
+	std::cout << BWHT << " Cat copy constructor called."
 			  << RES << std::endl;
+	this->_brain_cat = new Brain();
 	*this = cpy;
 }
 
 Cat::~Cat()
 {
-	std::cout << BWHT << " Cat Destructor called" << RES << std::endl;
 	delete this->_brain_cat;
+	std::cout << BWHT << " Cat Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================
@@ -50,13 +56,13 @@ Cat &Cat::operator=(const Cat &rhs)
 // members functions and accessors =============================================
 //==============================================================================
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
 	std::cout << BWHT << this->_type << " Mrrrraouuuw"
 			  << RES << std::endl;
 }
 
-Brain* Cat::get_brain() const
+Brain *Cat::get_brain() const
 {
 	return this->_brain_cat;
 }
