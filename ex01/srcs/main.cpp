@@ -2,8 +2,8 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "wrongAnimal.hpp"
-#include "wrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "colors.h"
 
 int main()
@@ -31,8 +31,11 @@ int main()
 		{
 			for (i = 0; i < n / 2; i++)
 				lot_of_pets[i] = new Dog();
-			for (i = i; i < n; i++)
+			while (i < n)
+			{
 				lot_of_pets[i] = new Cat();
+				i++;
+			}
 		}
 		for (int i = 0; i < n; i++)
 			lot_of_pets[i]->makeSound();

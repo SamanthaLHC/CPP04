@@ -13,8 +13,8 @@ SRCS = $(addprefix $(SRCS_PATH), \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		wrongAnimal.cpp \
-		wrongCat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 		Brain.cpp \
 		main.cpp)
 
