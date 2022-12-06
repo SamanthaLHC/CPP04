@@ -10,7 +10,7 @@ SRCS_PATH = ./srcs/
 OBJ_PATH = ./objs/
 
 SRCS = $(addprefix $(SRCS_PATH), \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
