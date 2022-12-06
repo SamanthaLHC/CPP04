@@ -10,7 +10,6 @@ class WrongAnimal
 	public:
 
 		WrongAnimal(void);
-		WrongAnimal(std::string name);
 		WrongAnimal(WrongAnimal const &cpy);
 		WrongAnimal &operator=( WrongAnimal const &rhs);
 		~WrongAnimal(void);

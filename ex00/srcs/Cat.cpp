@@ -5,23 +5,17 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	this->_type = "Cat";
 	std::cout << BWHT << " Cat default constructor called."
 			  << RES << std::endl;
 }
 
-Cat::Cat(std::string type): Animal()
-{
-	this->_type = type;
-	std::cout << BWHT << " Cat type constructor called."
-			  << RES << std::endl;
-}
-
 Cat::Cat(const Cat &cpy): Animal()
 {
-	std::cout << BWHT << this->_type << " Cat copy constructor called."
+	this->_type = "Cat";
+	std::cout << BWHT << " Cat copy constructor called."
 			  << RES << std::endl;
 	*this = cpy;
 }
@@ -36,8 +30,7 @@ Cat::~Cat()
 
 Cat &Cat::operator=(const Cat &rhs)
 {
-	if (this != &rhs)
-		this->_type = rhs._type;
+	(void) rhs;
 	return *this;
 }
 

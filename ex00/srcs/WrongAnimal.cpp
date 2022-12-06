@@ -11,12 +11,6 @@ WrongAnimal::WrongAnimal()
 			  << RES << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type): _type(type)
-{
-	std::cout << BWHT << " WrongAnimal type constructor called."
-			  << RES << std::endl;
-}
-
 WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
 {
 	std::cout << BWHT << " WrongAnimal copy constructor called."

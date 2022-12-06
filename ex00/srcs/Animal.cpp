@@ -5,19 +5,13 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-Animal::Animal()
+Animal::Animal() : _type("")
 {
 	std::cout << BWHT << " Animal default constructor called."
 			  << RES << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
-{
-	std::cout << BWHT << " Animal type constructor called."
-			  << RES << std::endl;
-}
-
-Animal::Animal(const Animal &cpy)
+Animal::Animal(const Animal &cpy) : _type("")
 {
 	std::cout << BWHT << " Animal copy constructor called."
 			  << RES << std::endl;
@@ -34,8 +28,7 @@ Animal::~Animal()
 
 Animal &Animal::operator=(const Animal &rhs)
 {
-	if (this != &rhs)
-		this->_type = rhs._type;
+	(void) rhs;
 	return *this;
 }
 

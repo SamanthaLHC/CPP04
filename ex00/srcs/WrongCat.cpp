@@ -14,13 +14,6 @@ WrongCat::WrongCat()
 			  << RES << std::endl;
 }
 
-WrongCat::WrongCat(std::string type): WrongAnimal()
-{
-	this->_type = type;
-	std::cout << BWHT << " WrongCat type constructor called."
-			  << RES << std::endl;
-}
-
 WrongCat::WrongCat(const WrongCat &cpy): WrongAnimal()
 {
 	std::cout << BWHT << this->_type << " WrongCat copy constructor called."

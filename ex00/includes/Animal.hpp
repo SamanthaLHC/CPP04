@@ -10,10 +10,9 @@ class Animal
 	public:
 
 		Animal(void);
-		Animal(std::string name);
 		Animal(Animal const &cpy);
 		Animal &operator=( Animal const &rhs);
-		virtual ~Animal(void);
+	 	virtual ~Animal(void);
 
 		virtual void makeSound() const;
 
