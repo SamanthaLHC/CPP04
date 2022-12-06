@@ -6,7 +6,7 @@
 // constructs and destruct =====================================================
 //=============================================================================
 
-Cat::Cat() : Animal("Cat"), _brain_cat(NULL) 
+Cat::Cat() : Animal("Cat"), _brain_cat(NULL)
 {
 	std::cout << BWHT << " Cat default constructor called."
 			  << RES << std::endl;
@@ -22,15 +22,16 @@ Cat::Cat(std::string type) : Animal(type), _brain_cat(NULL)
 
 Cat::Cat(const Cat &cpy) : Animal(cpy), _brain_cat(NULL)
 {
-	std::cout << BWHT << this->_type << " Cat copy constructor called."
+	std::cout << BWHT << " Cat copy constructor called."
 			  << RES << std::endl;
+	this->_brain_cat = new Brain();
 	*this = cpy;
 }
 
 Cat::~Cat()
 {
-	std::cout << BWHT << " Cat Destructor called" << RES << std::endl;
 	delete this->_brain_cat;
+	std::cout << BWHT << " Cat Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================
@@ -61,7 +62,7 @@ void Cat::makeSound() const
 			  << RES << std::endl;
 }
 
-Brain* Cat::get_brain() const
+Brain *Cat::get_brain() const
 {
 	return this->_brain_cat;
 }

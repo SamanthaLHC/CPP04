@@ -22,15 +22,16 @@ Dog::Dog(std::string type) : Animal(type), _doggo_brain(NULL)
 
 Dog::Dog(const Dog &cpy) : Animal(cpy), _doggo_brain(NULL)
 {
-	std::cout << BWHT << this->_type << " Dog copy constructor called."
+	std::cout << BWHT << " Dog copy constructor called."
 			  << RES << std::endl;
+	this->_doggo_brain = new Brain();
 	*this = cpy;
 }
 
 Dog::~Dog()
 {
-	std::cout << BWHT << " Dog Destructor called" << RES << std::endl;
 	delete this->_doggo_brain;
+	std::cout << BWHT << " Dog Destructor called" << RES << std::endl;
 }
 
 // operator overload ==========================================================
